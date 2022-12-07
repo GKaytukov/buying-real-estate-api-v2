@@ -15,7 +15,7 @@ export async function addNewUser(req, res) {
 
 export async function getAllUsers(req, res) {
     const db = dbConnect()
-    const collection = await db.collection("users").find().toArray()
+    const collection = await db.collection("applyforfunding").find().toArray()
     res.send(collection)
 }
 

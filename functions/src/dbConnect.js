@@ -5,6 +5,7 @@ import 'dotenv/config'
 
 export function dbConnect () {
     const client = new MongoClient(process.env.MONGO_URI);
+    console.log(process.env.MONGO_URI)
     return client.db("mydatabase");
 }
 

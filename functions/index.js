@@ -4,7 +4,7 @@ import cors from "cors";
 import { addNewUser, getAllUsers, getOneUser, updateUser, deleteUser } from "./src/users.js";
 import { addContactUsMessage } from "./src/contact.js";
 import { addLogin } from "./src/login.js";
-import { addApplyForFunding} from "./src/applyforfunding.js"; 
+import { addApplyForFunding, getFundingForms} from "./src/applyforfunding.js"; 
 import { addSignUp } from "./src/signup.js";
 
 const PORT = 3030 //Application will using express as my API
@@ -17,6 +17,7 @@ app.post('/signup', addSignUp)
 app.post('/login', addLogin)
 app.post('/contactus', addContactUsMessage)
 app.post('/applyforfunding', addApplyForFunding)
+app.post('/getfunding', getFundingForms)
 app.get('/users', getAllUsers)
 app.patch('/users/:userId', updateUser)
 app.get('/users/:userId', getOneUser)
