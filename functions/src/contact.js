@@ -12,4 +12,4 @@ export async function addContactUsMessage(req, res) {
             return
         })
     res.status(201).send({ message: " Contact Us Message Added." })
-} // get all 
+} 

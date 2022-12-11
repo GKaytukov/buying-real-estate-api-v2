@@ -1,6 +1,5 @@
 import { dbConnect } from "./dbConnect.js";
 import { ObjectId } from "mongodb"; // Importing Object - unique identifiers for all the docs in db
-import { app } from "firebase-admin";
 import { getAllUsers, getOneUser } from "./users.js";
 
 export async function addApplyForFunding(req, res) {
@@ -14,12 +13,12 @@ export async function addApplyForFunding(req, res) {
             return
         })
     res.status(201).send({ message: " Apply For Funding Added." })
-} // get all 
+} 
 
 
-export async function getFundingForms(req, res) {
-    app.get('/users/:userId', getOneUser)
-    app.get('/users/:userId', getAllUsers)
+// export async function getFundingForms(req, res) {
+//     app.get('/users/:userId', getOneUser)
+//     app.get('/users/:userId', getAllUsers)
 
     
-}
+// }

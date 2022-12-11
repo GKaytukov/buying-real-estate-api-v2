@@ -11,7 +11,7 @@ export async function addNewUser(req, res) {
             return
         })
     res.status(201).send({ message: "New Users Added." })
-} // getAll
+} 
 
 export async function getAllUsers(req, res) {
     const db = dbConnect()
