@@ -7,8 +7,8 @@ import { addLogin } from "./src/login.js";
 import { addApplyForFunding, getFundingForms} from "./src/applyforfunding.js"; 
 import { addSignUp } from "./src/signup.js";
 
-const PORT = 3030 //Application will using express as my API
-const app = express()
+const PORT = 3030 
+const app = express() //Application will using express as my API
 app.use(express.json())
 app.use(cors())
 

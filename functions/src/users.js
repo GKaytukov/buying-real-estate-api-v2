@@ -11,11 +11,11 @@ export async function addNewUser(req, res) {
             return
         })
     res.status(201).send({ message: "New Users Added." })
-} 
+} // getAll
 
 export async function getAllUsers(req, res) {
     const db = dbConnect()
-    const collection = await db.collection("applyforfunding").find().toArray()
+    const collection = await db.collection("users").find().toArray()
     res.send(collection)
 }
 
@@ -30,14 +30,18 @@ export async function updateUser(req, res) {
             res.status(500).send(err)
             return
         })
-    res.status(202).send({ message: "Users updated" })
+    res.status(203).send({ message: "Users updated" })
 }
 export async function getOneUser(req, res) {
     const db = dbConnect()
     const { userId } = req.params
     const collection = await db.collection("users")
-        .find({ _id: new ObjectId(userId) }).toArray()
+        .find({ _id: new ObjectId(userId) }).toArray() //find the id of that document userId and once found turn into in an array
     res.send(collection)
+    .catch(err => {
+        res.status(500).send(err)
+        return
+    })
 }
 
 export async function deleteUser(req, res) {
@@ -46,6 +50,10 @@ export async function deleteUser(req, res) {
     await db.collection("users")
         .findOneAndDelete({ _id: new ObjectId(userId) })
     res.status(203).send('users Deleted')
+    .catch(err => {
+        res.status(500).send(err)
+        return
+    })
 }
 
 
